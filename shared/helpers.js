@@ -1,7 +1,8 @@
 var _ = require('underscore');
 
 // Lazy-required.
-var BaseView = null;
+// Disable Lazy-required to work around Error: Cannot find module 'rendr/shared/base/view' when using multiple subview
+var BaseView = require('rendr/shared/base/view');
 
 module.exports = function(Handlebars, getTemplate) {
   var oldEach = Handlebars.helpers.each;
